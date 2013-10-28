@@ -816,6 +816,7 @@ var FRISBEEAPP = FRISBEEAPP || {};
 
 		}
 	}
+	
 
 	// Stap 1
 	// DOM is klaar (pagina is geladen)
