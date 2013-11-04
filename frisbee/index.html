@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Frisbee Webapp - Bram Swier</title>
+	<link href="static/css/stijl.css" rel="stylesheet" type="text/css" />
+	<link href="static/css/responsive-nav.css" rel="stylesheet" type="text/css" />
+	<link href="static/css/pulltorefresh.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body id="container">	
+	<div id="pullrefresh">
+        <div class="message">
+            <div id="pullrefresh-icon" class="icon arrow arrow-down"></div>
+            <span></span>
+        </div>
+    </div>
+
+	<header>
+		<a href="index.html"><img src="static/images/frisbee.png"></a>
+		<h1>Amsterdam Ultimate Autumn</h1>
+
+		<a href="" class="nav-toggle" id="navtoggleid" aria-hidden="false">Menu</a>
+		<nav class="nav-collapse closed">
+			<ul>
+				<li><a class="lvhome" href="#/lvhome">Home</a></li>
+				<li><a class="lvteams" href="#/lvteams">Teams</a></li>
+				<li><a class="lvpools" href="#/lvpools">Pools</a></li>
+				<li><a class="lvschedule" href="#/lvschedule">Schedule</a></li>
+		   </ul>
+		</nav>
+	</header>
+
+	<article id="content">
+		<section id="overlay">
+    		<img src="static/images/loading_dark_large.gif" id="loader">
+    	</section>
+
+		<section data-route="lvhome" class="active" id="lvhome">
+			<section data-bind="objects">
+				<h1 data-bind="name"></h1>
+				<article id="renderInto" data-bind="renderedInfo"></article>
+			</section>
+		</section>
+
+		<section data-route="lvteams" id="lvteams">
+			<h1 data-bind="name"></h1>
+			<table>
+				<thead>
+	                <tr>
+	                    <th>Team</th>
+	                    <th>Won</th>
+	                    <th>Lost</th>
+	                </tr>
+	            </thead>
+				<tbody data-bind="objects">
+	                <tr>
+	                    <td data-bind="team"><a data-bind="teamId"><span data-bind="name"></span></a></td>
+	                    <td data-bind="wins"></td>
+	                    <td data-bind="losses"></td>
+	                </tr>
+	            </tbody>
+			</table>
+		</section>
+
+		<section data-route="lvteam" id="lvteam">
+			<article data-bind="objects">
+				<a class="lvteams" href="#/lvteams">&larr; Teams</a>
+
+				<h1 data-bind="team"><span data-bind="name"></span></h1>
+
+				<h2><span data-bind="sport"></span> team</h2>
+
+				<h2>Resultaten Autumn 2013</h2>
+
+				<h3>games gewonnen <span data-bind="wins"></span></h3>
+				<h3>games verloren <span data-bind="losses"></span></h3>
+				<h3>punten gescoord <span data-bind="points_scored"></span></h3>
+
+				<h4>Laatst gewijzigd: <span data-bind="laatsteWijziging"></span></h4>
+
+			</article>
+		</section>
+
+		<section data-route="lvpools" id="lvpools">
+			<section data-bind="objects">
+				<table class="poolSort" data-bind="poolSortId">
+					<h1>Pool <span data-bind="name"></span></h1>
+					<thead>
+						<tr>
+							<th>Team</th>
+							<th>W</th>
+							<th>L</th>
+							<th>PW</th>
+							<th>PL</th>
+							<th>+/-</th>
+						</tr>
+					</thead>
+					<tbody data-bind="standings" class="list">
+						<tr>
+							<td data-bind="team"><a data-bind="teamId"><span data-bind="name"></span></a></td>
+							<td class="winsSort" data-bind="wins"></td>
+							<td class="loseSort" data-bind="losses"></td>
+							<td class="pointsSort" data-bind="points_scored"></td>
+							<td class="allowedSort" data-bind="points_allowed"></td>
+							<td data-bind="plus_minus"></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<a class="poolidtoggle clean-orange" data-bind="poolId" href="#/lvpools">Toon gespeelde games</a>
+
+				<section data-bind="appendSection"></section>
+			</section>
+	
+			<section id="poolsAppend">
+				<ul  data-bind="objects">
+					<li>
+						<ul>
+							<li data-bind="tijdGespeeld"></li>
+						</ul>
+					</li>
+							
+					<li class="poolsAppendData" data-bind="team_1"><span data-bind="name"></span></li>
+					<li class="poolsAppendData">
+						<a data-bind="combinedScore" class="updatescorelink">
+						</a>
+					</li>
+					<li class="poolsAppendData" data-bind="team_2"><span data-bind="name"></span></li>
+				</ul>
+			</section>
+		</section>
+
+		<section data-route="lvschedule" id="lvschedule">
+			<input type="text" class="search" placeholder="Zoek op teams..."/>
+			<section id="sortbuttons">
+			</section>
+				<article data-bind="objects" class="list">
+						<ul data-bind="trId">
+							<li>
+								<ul>
+									<li data-bind="pool"><span class="poolNaam"></span></li>
+									<li class="gespeeldeTijd"><span data-bind="tijdGespeeld"></span></li>
+								</ul>
+							</li>
+							
+							<li class="name" data-bind="team_1"><span data-bind="team1NaamEnWinner"></span></li>
+							<li><a data-bind="gameId" class="updatescorelink">
+									<span class="schedulescore1" data-bind="team_1_score"></span>
+									<span class="scorestreepje">-</span>
+									<span class="schedulescore2" data-bind="team_2_score"></span>
+								</a>
+							</li>
+							<li class="name2" data-bind="team_2"><span data-bind="team2NaamEnWinner"></span></li>
+						</ul>
+
+						<ul class="formBijTrId">
+							<li>
+								<section class="scheduleformcontainer">
+									<form class="lvschedulescoreform" data-bind="gameFormId">
+										<label class="name" for="team_1_score_schedule" data-bind="team_1">
+											<input type="number" min="0" name="team_1_score_schedule" data-bind="team_1_score">
+											<span data-bind="team1NaamEnWinner"></span> 									
+										</label>
+										
+										<label class="name2" for="team_2_score_schedule" data-bind="team_2">
+											<input type="number" min="0" name="team_2_score_schedule" data-bind="team_2_score">
+											<span data-bind="team2NaamEnWinner"></span>							
+										</label>
+										<section class="groupbottom">
+											<label><input type="checkbox" checked>Eindscore</label>
+											<button class="clean-orange" type="submit" value="stuur">Verstuur</button>
+										</section>
+									</form>	
+								</section>
+							</li>
+						</ul>
+				</article>		
+		</section>
+
+		<section data-route="lvgame" id="lvgame">
+			<article data-bind="objects" id="gamepaginacontents">
+				<a class="lvschedule" href="#/lvschedule">&larr; Schedule</a>
+				
+				<h1 data-bind="objects"><span data-bind="naamTeam1"></span> - <span data-bind="naamTeam2"></span></h1>
+
+				<h2 data-bind="tijdGespeeld"></h2>
+
+					<form data-bind="formId">
+						<label for="team1score" data-bind="naamTeam1"> 
+							<input type="number" min="0" name="team1score" id="team1score" data-bind="team_1_score">
+						</label>
+
+						<label for="team2score" data-bind="naamTeam2"> 
+							<input type="number" min="0" name="team2score" id="team2score" data-bind="team_2_score">
+						</label>
+					
+						<label id="eindscorelabel" for="isFinal">Eindscore
+							<input type="checkbox" name="isFinal" id="isFinal" checked></input>  
+						</label>
+						
+						<button class="clean-orange" type="submit" name="verstuurupdateteamscore" id="verstuurupdateteamscore">Verstuur score</button>
+					</form>
+			</article>
+		</section>
+	</article>
+
+	<!-- Libs -->
+	<script src="static/js/lib/modernizr.min.js"></script>
+	<script src="static/js/lib/routie.min.js"></script>
+	<script src="static/js/lib/ready.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/qwery.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/transparancy.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/reqwest.js" type="text/javascript"></script>
+	<script src="static/js/lib/list.min.js" type="text/javascript"></script>
+	<script src="static/js/lib/hammer.js" type="text/javascript"></script>
+	<script src="static/js/lib/pulltorefresh.js" type="text/javascript"></script>
+
+	<!-- Application -->
+	<script src="static/js/app.js"></script>
+	
+</body>
+</html>

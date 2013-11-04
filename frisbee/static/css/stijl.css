@@ -1,0 +1,843 @@
+/*  Begin CSS Reset 
+	http://meyerweb.com/eric/tools/css/reset/ 
+   	v2.0 | 20110126
+   	License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Einde CSS Reset */
+
+html, body {
+	height: 100% !important;
+}
+
+body {
+	max-width: 1400px;
+	font: 100%/1.5 sans-serif;
+	margin: 0 auto;
+	padding: 0 1em 2em 1em;
+	color: #333;
+}
+
+body > header img {
+	float:left;
+	max-width:55px;
+}
+
+body > header h1 {
+	font-size: 90%;
+	text-align: center;
+	margin-top:0.8em;
+	max-width: 90%;
+}
+
+body > header {
+	padding-top: 1em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 2em;
+}
+
+body > header:after {
+	content: "";
+	clear:both;
+	display: block;
+}
+
+#content {
+	padding: 0em 0em 1.5em 0em;
+}
+
+.center {
+	text-align: center;
+}
+
+.clearfix {
+	clear:both;
+}
+
+.winner, .stalemate {
+	font-weight: bold;
+}
+
+/********************************
+******** RESPONSIVE NAV *********
+********************************/
+
+.nav-collapse,
+.nav-collapse * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nav-collapse,
+.nav-collapse ul {
+  list-style: none;
+  width: 100%;
+  float: left;
+}
+
+.nav-collapse li {
+  float: left;
+  width: 100%;
+}
+
+.nav-collapse a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  background: #f4421a;
+  border-bottom: 1px solid white;
+  padding: 0.7em 1em;
+  float: left;
+  -webkit-transition: linear 0.1s;
+  -moz-transition: linear 0.1s;
+  -ms-transition: linear 0.1s;
+  -o-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+
+.nav-collapse a:hover {
+	background: #e2210a;
+}
+
+.nav-collapse a:active, .nav-collapse a.activemenu {
+	background: #C40A00;
+}
+
+.nav-collapse ul ul a {
+  background: #ca3716;
+  padding-left: 2em;
+}
+
+.nav-toggle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 70px;
+  height: 55px;
+  float: right;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: #f4421a url("hamburger.gif") no-repeat 50% 33%;
+}
+
+/******************************
+****** ARTICLE (CONTENT) ******
+******************************/
+
+article {
+	width:100%;
+	margin: auto;
+}
+	article > section {
+		display:none;
+	}
+
+	article > section.active {
+		display:block;
+	}
+
+	article h1 {
+		margin-bottom: .5em;
+		font-weight: bold;
+		font-size: 120%;
+	}
+
+	article nav ul {
+		list-style: none;
+	}
+
+/********************************
+************* TABLE *************
+********************************/
+
+table { 
+	width: 100%;
+	margin-bottom: 1em;	
+}
+
+th {
+	font-weight: bold;
+}
+
+tr {
+	text-align: center;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+thead tr {
+	border-bottom: 0;
+}
+
+td {
+	padding:1.2em 0.5em;
+	vertical-align: middle;
+}
+
+table .winner {
+	background-color:green;
+}
+
+table .loser {
+	background-color:red;
+}
+
+table .stalemate {
+	background-color:yellow;
+}
+
+table thead tr {
+	border-bottom: 0;
+}
+
+/********************************
+************ HOMEPAGE ***********
+********************************/
+
+#lvhome a {
+	text-decoration: none;
+	color: #EC2D00;
+}
+
+#lvhome a:hover {
+	color: #B30000;
+}
+
+/********************************
+********** GAMEPAGINA ***********
+********************************/
+
+#lvgame > article a {
+	margin-bottom: 1em;
+	display: inline-block;
+	text-decoration: none;
+	color: #EC2D00;
+}
+
+#lvgame > article a:hover {
+	color: #B30000;
+}
+
+#lvgame > article h1 {
+	text-align: center;
+	font-size: 140%;
+	margin-bottom: .5em;
+	margin-top:.5em;
+}
+
+#lvgame > article h2 {
+	text-align: center;
+	color:#ccc;
+	margin-bottom: 1em;
+	font-size: 100%;
+}
+
+#lvgame label {
+	display: block;
+	font-size: 120%;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+#lvgame label input:not([type="checkbox"]) {
+	float: right;
+	width: 60px;
+	height: 26px;
+	text-align: center;
+	font-size: 100%;
+}
+
+#lvgame #eindscorelabel {
+	display: block;
+	text-align: left;
+	margin-top:2em;
+}
+
+#lvgame #eindscorelabel input {
+	float: right;
+	margin-right: 20px;
+	  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  
+}
+
+#lvgame button[type="submit"] {
+	clear: both;
+	display: block;
+	margin: auto;
+	width: 100%;
+	padding: 1em 0em;
+	font-size: 100%;
+	margin-top:1em;
+}
+
+/********************************
+********** POOLSPAGINA **********
+********************************/
+
+#lvpools table a {
+	text-decoration: none;
+	color: #EC2D00;
+}
+
+#lvpools table a:hover {
+	color: #B30000;
+}
+
+#lvpools table tbody {
+	font-size: 94%;
+}
+
+#lvpools table tbody tr td:first-of-type {
+	width: 34%;
+}
+
+#lvpools table thead th {
+	font-size:80%;
+}
+
+#lvpools h1 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.poolidtoggle {
+	text-decoration: none;
+	display: block;
+	margin: 2em auto 2em auto;
+}
+
+.poolidtoggle.clean-orange {
+	width: 100%;
+}
+
+#poolsAppend {
+	max-height: 0;
+	overflow: hidden;
+	margin-bottom: 2em;
+	-webkit-transition: max-height 0.8s;
+	-moz-transition: max-height 0.8s;
+	transition: max-height 0.8s;
+}
+
+#poolsAppend a {
+	text-decoration: none;
+	color: #EC2D00;
+}
+
+#poolsAppend a:hover {
+	color: #B30000;
+}
+
+#poolsAppend ul li {
+	display: inline;
+}
+
+#poolsAppend ul li.poolsAppendData {
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 1em;
+} 
+
+#poolsAppend ul > li > ul {
+	text-align: center;
+	margin-bottom: 1.25em;
+	margin-top:.5em;
+	border-top: 1px solid #ddd;
+}
+
+#poolsAppend ul > li > ul > li {
+	display: inline;
+	font-size: 80%;
+}
+
+/********************************
+*********** TEAMSPAGINA *********
+********************************/
+
+#lvteams a {
+	text-decoration: none;
+	color: #EC2D00;
+}
+
+#lvteams a:hover {
+	color: #B30000;
+}
+
+#lvteams table tbody tr td:first-of-type {
+	width: 48%;
+}
+
+#lvteams table tbody tr td:nth-of-type(2) {
+	width: 25%;
+}
+
+#lvteams table tbody tr td:nth-of-type(3) {
+	width: 25%;
+}
+
+/********************************
+*********** TEAMPAGINA **********
+********************************/
+#lvteam > article a {
+	margin-bottom: 1em;
+	display: inline-block;
+	text-decoration: none;
+	color: #EC2D00;
+}
+
+#lvteam > article a:hover {
+	color: #B30000;
+}
+
+#lvteam > article h1 {
+	text-align: center;
+	font-size: 200%;
+	margin-bottom: 0em;
+}
+
+#lvteam > article h2:first-of-type {
+	text-transform: uppercase;
+	font-size: 80%;
+	color:#aaa;
+	text-align: center;
+}
+
+#lvteam > article h2:nth-of-type(2) {
+	margin-top: 2em;
+	text-align: center;
+	font-size: 100%;
+	text-transform: uppercase;
+	margin-bottom: 2em;
+}
+
+#lvteam > article h3 {
+	float: left;
+	width: 30%;
+	margin:0em 2.4%;
+	background: #eee;
+	text-transform: uppercase;
+	font-size: 80%;
+	text-align: center;
+	padding:.25em 0em;
+}
+
+#lvteam > article h3:first-of-type {
+	margin: 0em 2.4% 0em 0em;
+}
+
+#lvteam > article h3:last-of-type {
+	margin:0em 0em 0em 2.4%;
+}
+
+#lvteam > article h3 span {
+	display: block;
+	background: #f9f9f9;
+	text-align: center;
+	padding: 1em;
+	font-size: 160%;
+	margin-top:.25em;
+}
+
+#lvteam > article h4 {
+	display: block;
+	margin-top: 14em;
+	font-size: 80%;
+	color: #aaa;
+	font-style: italic;
+	text-align: center;
+}
+
+/********************************
+******** SCHEDULEPAGINA *********
+********************************/
+.scorestreepje {
+	display: none;
+}
+
+.clean-orange.sort	 {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:8px 6px;
+}
+
+.lvschedulescoreform {
+	display: none;
+}
+
+.lvschedulescoreform:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.formbijtrid {
+	height: 118px;
+	
+	margin-top: -136px;
+	margin-bottom: 18px;
+	opacity:1;
+	z-index:-1;
+}
+
+.formbijtrid form {
+	max-width: 90%;
+}
+
+.formbijtrid label {
+	display: block;
+	float: left;
+	width: 120px;
+}
+
+.formbijtrid label span {
+	font-size: 90%;
+}
+
+.formbijtrid label:nth-of-type(even):after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.formbijtrid form > label > input {
+	display: inherit;
+	width:46px;
+	font-size: 16px;
+	margin-bottom: .25em;
+}
+
+.formbijtrid button[type="submit"] {
+	float: left;
+}
+
+.formbijtrid button[type="submit"].clean-orange {
+	width: 77px;
+}
+
+.formbijtrid .groupbottom {
+	clear: both;
+}
+
+.formbijtrid .groupbottom:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.formbijtrid .groupbottom label {
+	float:left;
+	
+}
+
+.formbijtrid .groupbottom label input {
+	width: 16px;
+}
+
+
+.trAppendClass {
+	height: 118px;
+	-webkit-transform: translate3d(0,0,0);
+  	-moz-transform: translate3d(0,0,0);
+  	-ms-transform: translate3d(0,0,0);
+  	-o-transform: translate3d(0,0,0);
+  	transform: translate3d(0,0,0);
+	background:white;
+	z-index:1;
+	-webkit-transition:.8s;
+	-webkit-user-select:none;
+	-moz-transition:.8s;
+	-moz-user-select:none;
+	box-shadow: 15px 0 8px -6px rgba(0,0,0,0.1) , -10px 0 8px -6px rgba(0,0,0,0.1);
+	-moz-box-shadow: 15px 0 8px -6px rgba(0,0,0,0.1) , -10px 0 8px -6px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 15px 0 8px -6px rgba(0,0,0,0.1) , -10px 0 8px -6px rgba(0,0,0,0.1);
+}
+
+.search {
+	width:100%;
+	-webkit-appearance: searchfield;
+}
+
+#sortbuttons {
+	text-align: center;
+	padding:1em 0em;
+}
+
+.clean-orange {
+	width: 32%;
+  background-color: #EC2D00;
+  border-radius: 3px;
+  color: white;
+  font-family: sans-serif;
+  padding: 8px 0px;
+  text-align: center;
+  border:0;
+  font-size:80%;
+  -webkit-transition:.2s;
+  outline:0; 
+}
+  .clean-orange:hover {
+    background-color: #D60C00;
+    cursor: pointer;
+    
+}
+  .clean-orange:active {
+    background-color: #C40A00;
+   
+}
+
+#lvschedule .scheduleformcontainer {
+	max-width: 100%;
+	margin: auto;
+}
+
+#lvschedule a {
+	text-decoration: none;
+	color: #EC2D00;
+}
+
+#lvschedule a:hover {
+	color: #B30000;
+}
+
+#lvschedule > article {
+	overflow: hidden;
+}
+
+#lvschedule > article > ul.trAppendClass {
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	padding:1em 0em 2em 0em;
+	position: relative;
+}
+
+#lvschedule > article > ul.trAppendClass:first-of-type {
+	border-top: 1px solid #ddd;
+}
+
+#lvschedule > article > ul.formbijtrid {
+	padding:0;
+	border:0;
+	background:0;
+}
+
+/*#lvschedule > article > ul > li {
+	display: inline;
+}*/
+
+#lvschedule > article > ul > li:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#lvschedule > article > ul > li:nth-of-type(2), #lvschedule > article > ul > li:nth-of-type(3), #lvschedule > article > ul > li:nth-of-type(4) {
+	display: inline-block;
+}
+
+#lvschedule > article > ul > li:nth-of-type(2) {
+	text-align: center;
+	width: 30%;
+} 
+
+#lvschedule > article > ul > li:nth-of-type(3) {
+	text-align: center;
+	width: 36%;
+} 
+
+#lvschedule > article > ul > li:nth-of-type(4) {
+	text-align: center;
+	width: 30%;
+}  
+
+#lvschedule > article > ul > li > ul {
+	text-align: center;
+	margin-bottom: 1.25em;
+}
+
+#lvschedule > article > ul > li > ul > li {
+	display: inline;
+	font-size: 80%;
+}
+
+
+
+/********************************
+** SPINNIG ANIMATION & OVERLAY **
+********************************/
+
+#overlay {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background:#ddd;
+	display: block;
+	opacity: 0;
+  	 -webkit-transition: opacity .4s linear;
+  	z-index:999;
+}
+
+#loader {
+	left: 50%;
+	margin-left: -75px;
+	margin-top: -75px;
+	position: fixed;
+	top: 200px;
+	height: 150px;
+	width: 150px;
+	z-index:999;
+}
+
+/********************************
+********* MEDIA QUERIES *********
+********************************/
+
+@media screen and (min-width: 32.500em) {
+	body > header h1 {
+		font-size: 120%;
+		text-align: center;
+		margin-top:0.8em;
+		max-width: 90%;
+	}
+
+	body > header img {
+		max-width:77px;
+	}
+
+	body > header > .nav-collapse a {
+		border-bottom: 2px solid white;
+	}
+}
+
+@media screen and (min-width: 48em) {
+	body > header {
+		background-color: #333;
+		text-align: center;
+		border-bottom: none;
+		
+	}
+	body > header h1 {
+		font-size: 140%;
+		color:white;
+		float:none;
+		max-width: 100%;
+		margin-top:0em;
+		margin-bottom:0.5em;
+	}
+
+	body > header img {
+		float:none;
+		max-width: 100%;
+	}
+
+	.nav-collapse a {
+		margin: 0;
+		padding: 1em;
+		float: left;
+		text-align: center;
+		border-bottom: 0;
+		border-right: 1px solid white;
+	}
+
+	.nav-collapse li:last-of-type a{
+		border-right:0px;
+	}
+
+	.nav-collapse li {
+		width: 25%;
+		*width: 24.9%; /* IE7 Hack */
+		_width: 19%; /* IE6 Hack */
+	}
+
+	.nav-collapse ul ul a {
+	    display: none;
+	}
+
+	article nav ul {
+		margin-bottom:3em;
+	}
+
+	section#gamepaginacontents {
+		text-align: left;
+	}
+
+	#lvschedule .scheduleformcontainer {
+		max-width: 40%;
+	}
+
+	#lvschedule .scheduleformcontainer .lvschedulescoreform label:first-of-type, #lvschedule .scheduleformcontainer .lvschedulescoreform .groupbottom label:first-of-type {
+		margin-right: 20px;
+	}
+
+
+	.search {
+		max-width: 24em;
+		display: block;
+		margin: 0 auto;
+	}
+
+	button.clean-orange.sort {
+		max-width: 12%;
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.3), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+	.nav-toggle {
+	    background-image: url("hamburger-retina.gif");
+	    -webkit-background-size: 100px 100px;
+	    -moz-background-size: 100px 100px;
+	    -o-background-size: 100px 100px;
+	    background-size: 100px 100px;
+	}
+}
